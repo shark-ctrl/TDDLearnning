@@ -1,5 +1,6 @@
 package com.example.TDDLearnning;
 
+import com.example.TDDLearnning.BowlingGame.Game;
 import junit.framework.TestCase;
 
 public class BowlingGameTest extends TestCase {
