@@ -14,8 +14,8 @@ public class Game {
 //        代表局索引 0则是第0局
         int frameIndex = 0;
         for (int frame = 0; frame < 10; frame++) {
-            if (rolls[frameIndex] == 10) {
-                score=rolls[frameIndex]+rolls[frameIndex+1]+rolls[frameIndex+2];
+            if (isStrike(frameIndex)) {
+                score = rolls[frameIndex] + rolls[frameIndex + 1] + rolls[frameIndex + 2];
 //                因为Strike一击就中所以就投了一球，frameIndex+1就可以跳过这局的分数了
                 frameIndex++;
             } else if (isSpare(frameIndex)) {
@@ -33,6 +33,10 @@ public class Game {
         }
 
         return score;
+    }
+
+    private boolean isStrike(int frameIndex) {
+        return rolls[frameIndex] == 10;
     }
 
     private boolean isSpare(int frameIndex) {
