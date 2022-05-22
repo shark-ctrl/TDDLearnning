@@ -11,22 +11,27 @@ public class Game {
 
     public int score() {
         int score = 0;
-        int i = 0;
+//        代表局索引 0则是第0局
+        int frameIndex = 0;
         for (int frame = 0; frame < 10; frame++) {
-            if ( rolls[i] + rolls[i + 1]==10){
+            if (isSpare(frameIndex)) {
                 //如果完成spare，分数则是10+下一局的分数
-                score += 10 + rolls[i + 2];
+                score += 10 + rolls[frameIndex + 2];
                 //越过这局的分数
-                i += 2;
-            }else{
+                frameIndex += 2;
+            } else {
                 //成绩等于每局的两球成绩相加
-                score += rolls[i] + rolls[i + 1];
+                score += rolls[frameIndex] + rolls[frameIndex + 1];
                 //越过这局的分数
-                i += 2;
+                frameIndex += 2;
             }
 
         }
 
         return score;
+    }
+
+    private boolean isSpare(int frameIndex) {
+        return rolls[frameIndex] + rolls[frameIndex + 1] == 10;
     }
 }
