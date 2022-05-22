@@ -49,14 +49,14 @@ public class BowlingGameTest extends TestCase {
 //     *
 //     * @throws Exception
 //     */
-//    public void testOneSpare() throws Exception {
-//        //第一局投了10分
-//        g.roll(5);
-//        g.roll(5);
-//        //第二局投了一个三分
-//        g.roll(3);
-////        第2局第2投0分，后面都是0分，第10局必须打满10分才能奖励一投，所以总投数为20
-//        rollMany(17, 0);
-//        assertEquals(16, g.score());
-//    }
+    public void testOneSpare() throws Exception {
+        //第一局投了10分
+        g.roll(5);
+        g.roll(5);
+        //第二局投了一个三分
+        g.roll(3);
+//        第2局第2投0分，后面都是0分，第10局必须打满10分才能奖励一投，所以总投数为20
+        rollMany(17, 0);
+        assertEquals(16, g.score());
+    }
 }
