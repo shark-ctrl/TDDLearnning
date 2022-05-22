@@ -67,12 +67,16 @@ public class BowlingGameTest extends TestCase {
 
     public void testOneStrike() {
         //第一局Strike 得分为10+后面两球得到即17
-        g.roll(10);
+        rollStrike();
 //        第二局3 4
         g.roll(3);
         g.roll(4);
         //其余都是0分
         rollMany(16, 0);
         assertEquals(24, g.score());
+    }
+
+    private void rollStrike() {
+        g.roll(10);
     }
 }
